@@ -45,7 +45,9 @@ There are some awesome features of this website are given bellow,
 
 
 ### usages font, framework & library:
-`React, Google-font:Archivo, firebase, tailwind CSS, heroicons, react-firebase-hooks ` 
+```
+React, Google-font:Archivo, firebase, tailwind CSS, heroicons, react-firebase-hooks
+```
 
 <!-- 1. css Framework.
 
