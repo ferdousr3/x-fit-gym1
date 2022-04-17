@@ -1,4 +1,4 @@
-import { ClockIcon } from '@heroicons/react/outline';
+
 import React from 'react';
 
 const FooterIconTitle = ({icon,text}) => {
