@@ -7,6 +7,7 @@ import Error from './pages/Error/Error'
 import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
 import Order from "./pages/Order/Order";
+import NewsLetter from "./components/NewsLetter/NewsLetter";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/order" element={ <Order /> } />
           <Route path="*" element={<Error />} />
         </Routes>
+        <NewsLetter />
       </main>
       <Footer />
     </>

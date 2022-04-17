@@ -1,7 +1,9 @@
 import React from 'react';
 import Appointment from '../../components/Appointment/Appointment';
 import HeroSection from '../../components/HeroSection/HeroSection';
+import NewsLetter from '../../components/NewsLetter/NewsLetter';
 import Services from '../../components/Services/Services';
+import WhyXfit from '../../components/WhyXfit/WhyXfit';
 
 const Home = () => {
   return (
@@ -13,6 +15,12 @@ const Home = () => {
     <section>
       <Appointment />
     </section>
+    <section>
+      <WhyXfit />
+    </section>
+    {/* <section>
+      <NewsLetter />
+    </section> */}
       
     </>
   );

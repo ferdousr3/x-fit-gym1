@@ -9,12 +9,12 @@ const Appointment = () => {
   return (
     <div className="bg-six ">
       <div className="container mx-auto p-2 lg:p-16">
-        <div className="grid grid-cols-1 lg:grid-cols-6 bg-white shadow-6xl p-2 lg:p-10 ">
+        <div className="grid grid-cols-1 lg:grid-cols-6 bg-white shadow-6xl p-2 lg:p-10 rounded-md ">
           {/* appoint left side */}
           <div className="col-span-3 pb-5">
             {/* name email */}
             <div className="md:flex">
-              <div className="m-4">
+              <form className="m-4">
                 <label
                   htmlFor="name"
                   className="block text-base font-bold text-second pl-1"
@@ -26,11 +26,11 @@ const Appointment = () => {
                     type="text"
                     name="price"
                     id="price"
-                    className=" bg-transparent focus:outline-none block w-full pl-7 py-2.5 pr-12 sm:text-sm border rounded-md"
+                    className=" text-four bg-transparent focus:outline-none block w-full pl-4 py-2.5 pr-12 sm:text-sm border rounded-md"
                     placeholder="Your Name"
                   />
                 </div>
-              </div>
+              </form>
               <div className="m-4">
                 <label
                   htmlFor="email"
@@ -43,7 +43,7 @@ const Appointment = () => {
                     type="email"
                     name="price"
                     id="price"
-                    className="bg-transparent focus:outline-none block w-full pl-7 py-2.5 pr-12 sm:text-sm border rounded-md"
+                    className="bg-transparent text-four  focus:outline-none block w-full pl-4 py-2.5 pr-12 sm:text-sm border rounded-md"
                     placeholder="expl@email.com"
                   />
                 </div>
@@ -64,7 +64,7 @@ const Appointment = () => {
                     type="number"
                     name="price"
                     id="price"
-                    className=" bg-transparent focus:outline-none block w-full pl-7 py-2.5 pr-12 sm:text-sm border rounded-md"
+                    className=" bg-transparent text-four  focus:outline-none block w-full pl-4 py-2.5 pr-12 sm:text-sm border rounded-md"
                     placeholder="Your Number"
                   />
                 </div>
@@ -81,7 +81,7 @@ const Appointment = () => {
                     type="text"
                     name="price"
                     id="price"
-                    className="bg-transparent focus:outline-none block w-full pl-7 py-2.5 pr-12 sm:text-sm border rounded-md"
+                    className="bg-transparent text-four  focus:outline-none block w-full pl-4 py-2.5 pr-12 sm:text-sm border rounded-md"
                     placeholder="Date"
                   />
                 </div>
@@ -100,7 +100,7 @@ const Appointment = () => {
                   type="text"
                   name="price"
                   id="price"
-                  className="bg-transparent focus:outline-none block w-full pl-7 py-2.5 pr-12 sm:text-sm border rounded-md"
+                  className="bg-transparent text-four  focus:outline-none block w-full pl-4 py-2.5 pr-12 sm:text-sm border rounded-md"
                   placeholder="Type Service Name"
                 />
               </div>
@@ -118,13 +118,13 @@ const Appointment = () => {
                   type="text"
                   name="price"
                   id="price"
-                  className="bg-transparent focus:outline-none block w-full pl-7 py-2.5 pr-12 sm:text-sm border rounded-md"
+                  className="bg-transparent text-four  focus:outline-none block w-full pl-4 py-2.5 pr-12 sm:text-sm border rounded-md"
                   placeholder="Type your Message"
                 />
               </div>
             </div>
             <div className="btn">
-              <Button text="Make Appointment" />
+              <Button text="Make Appointment" route='order' />
             </div>
           </div>
           {/* appoint right side */}
