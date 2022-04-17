@@ -84,7 +84,7 @@ const year=date.getFullYear()
             </p>
           </div>
         </div>
-        <div className=" border-t border-t-[#79797933] pt-5 pb-2 mt-6 flex justify-between items-center">
+        <div className=" border-t border-t-[#79797933] pt-5 pb-2 mt-6 flex-none sm:flex lg:flex xl:flex md:flex justify-between items-center">
           <p className="text-sm text-four">Your Personal Trainer mr.tarny</p>
           <p className="text-sm text-four">
             Copyright © {year}. All rights reserved.

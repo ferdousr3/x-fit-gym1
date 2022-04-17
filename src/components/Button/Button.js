@@ -7,10 +7,9 @@ const Button = ({text,route}) => {
   return (
     <div className="flex pt-10">
       <button
-        className="flex justify-center items-center bg-main hover:bg-mains py-4 px-10 rounded-full uppercase text-base transition-all duration-500 text-white font-medium "
+        className="flex justify-center items-center bg-main hover:bg-mains py-4 px-8 rounded-full text-base transition-all duration-700 text-white font-light "
         onClick={() => navigate(`/${route}`)}
       >
-        {" "}
         <p>
           {text}
         </p> <ArrowNarrowRightIcon className="w-6 h-5 ml-2" />

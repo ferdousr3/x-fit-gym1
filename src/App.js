@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="main-height pt-16 container mx-auto ">
+      <main className="main-height pt-16  ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
