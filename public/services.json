@@ -1,0 +1,41 @@
+[
+  
+  {
+    "id": "1",
+    "price":"100",
+    "name": "Online Classes ",
+    "img": "https://i.ibb.co/4MmKKxx/class.jpg",
+    "description": "To help you figure out which online workout classes and programs are actually worth the money, we asked our writers and editors to share their go-to online workouts, which include yoga and boxing, even dance cardio.",
+    "slug": "online-classes"
+  },
+  {
+    "id": "2",
+    "price":"400",
+    "name": "Diet Program ",
+    "img": " https://i.ibb.co/sQCrcH5/diet.jpg",
+    "description": "When you’re trying to build muscle, what you do in the kitchen is just as important as what you do in the gym. Protein is the key, which is why we’ve brought you this high-protein meal planner – taken from New Body Plan Plus, which along with this gym training plan for building muscle can help you increase your muscle mass.",
+    "slug": "diet-program"
+  },
+  {
+    "id": "3",
+    "price":"194",
+    "name": "Consultation",
+    "img": "https://i.ibb.co/6WMkj4w/consultation.jpg",
+    "description": "The initial fitness consultation can be awkward, it’s kind of like a first date, but about fitness. The consultation is an opportunity for a coach to get to know the client better and figure out their values and beliefs. But how do you walk the line between being professional and nosey?.",
+    "slug": "consultations"
+  },
+  {
+    "id": "4",
+    "price":"294",
+    "name": "Personal Training",
+    "img": "https://i.ibb.co/R4SsKT0/taining.jpg",
+    "description": "Whether you're new to fitness, struggle to find motivation, or simply need guidance and a push to help you achieve your goals, we have a solution for you.Whatever your focus and level of fitness, our Personal Trainers will work with you to design a bespoke exercise programme that works around your lifestyle.",
+    "slug": "personal-training"
+  }
+ 
+]
+
+
+
+
+
