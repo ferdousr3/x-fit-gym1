@@ -6,7 +6,7 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaGoogle } from "react-icons/fa";
+
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
