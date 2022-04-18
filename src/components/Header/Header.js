@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaAlignLeft } from "react-icons/fa";
 import { BsXLg } from "react-icons/bs";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 const Header = () => {
-
-  const navigate = useNavigate()
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
 
@@ -79,17 +77,7 @@ const Header = () => {
                   About
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink
-                  onClick={handleClose}
-                  className={({ isActive }) =>
-                    isActive ? "text-second  ml-4 " : " ml-4 text-main"
-                  }
-                  to="/contact"
-                >
-                  Contact
-                </NavLink>
-              </li> */}
+
               <li className="md:hidden mt-5">
                 {user ? (
                   <button
@@ -118,9 +106,6 @@ const Header = () => {
               !open ? "top-10" : "flex"
             }`}
           >
-            {/* <button onClick={()=>navigate('/login')}  className="hidden  lg:flex md:flex  justify-center lg:justify-end items-center text-right bg-main text-[#ffffff] py-2.5 px-8 rounded-3xl uppercase text-[14px] font-semibold hover:bg-mains transition-all duration-500 ">
-              Login
-            </button> */}
             {user ? (
               <button
                 onClick={handleSignOut}

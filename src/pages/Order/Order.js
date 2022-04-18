@@ -1,28 +1,40 @@
-import { LockClosedIcon, PaperAirplaneIcon } from "@heroicons/react/solid";
+import {  PaperAirplaneIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../components/Shared/Loading/Loading";
+import auth from "../../firebase.init";
 
 const Order = () => {
-
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [confirmPassword, setConfirmPassword] = useState("");
-const handleEmailBlur = (event) => {
-  setEmail(event.target.value);
-  console.log(email);
-};
-const handlePasswordBlur = (event) => {
-  setPassword(event.target.value);
-};
-const handleConfirmPasswordBlur = (event) => {
-  setConfirmPassword(event.target.value);
-};
-
-  const handleCreateUser = (event) => {
-    event.preventDefault();
-    toast("Thank You for Registration");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [user , loading ] = useAuthState(auth);
+  const handleNameBlur = (event) => {
+    setEmail(event.target.value);
   };
+  const handleEmailBlur = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleAddressBlur = (event) => {
+    setPassword(event.target.value);
+  };
+  const handlePhoneBlur = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const confirmOrder = (event) => {
+    event.preventDefault();
+    toast("Thank for your Order");
+  };
+
+  const { serviceSlug } = useParams(); 
+
+
 
   return (
     <div className="py-16 bg-six">
@@ -31,17 +43,37 @@ const handleConfirmPasswordBlur = (event) => {
         <div className="grid grid-cols-1 lg:grid-cols-8 gap-8">
           <div className="col-span-4">
             <h1 className="text-3xl font-bold text-second">
-              Join My Newsletter
+              Service Details {serviceSlug}
             </h1>
-            <p className="text-sm  pt-4 font-light racking-wide ">
+            {/* <p className="text-sm  pt-4 font-light racking-wide ">
               Join my newsletter for offer and latest update , new services
-            </p>
+            </p> */}
           </div>
           {/* right side */}
           <div className="col-span-4">
-            <form className="mt-8 space-y-4" onSubmit={handleCreateUser}>
+            <h1 className="text-2xl font-bold text-second text-center">
+              Shipment Form
+            </h1>
+            <p className="text-sm pt-2 text-four text-center">
+              {user.displayName}
+            </p>
+            <form className="mt-4 space-y-4" onSubmit={confirmOrder}>
               <input type="hidden" name="remember" defaultValue="true" />
               <div className="rounded-md shadow-sm -space-y-px">
+                <div>
+                  <label htmlFor="name" className="sr-only">
+                    name
+                  </label>
+                  <input
+                    onBlur={handleNameBlur}
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four rounded-t-md focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
+                    placeholder="Your Name"
+                  />
+                </div>
                 <div>
                   <label htmlFor="email-address" className="sr-only">
                     Email address
@@ -52,49 +84,51 @@ const handleConfirmPasswordBlur = (event) => {
                     name="email"
                     type="email"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four rounded-t-md focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
-                    placeholder="Email address"
+                    value={user.email ? user.email : 'You input email address section'}
+                    readOnly
+                    
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four  focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="password" className="sr-only">
-                    Password
+                  <label htmlFor="phone" className="sr-only">
+                    Phone
                   </label>
                   <input
-                    onBlur={handlePasswordBlur}
-                    id="password"
-                    name="password"
-                    type="password"
+                    onBlur={handlePhoneBlur}
+                    id="phone"
+                    name="phone"
+                    type="number"
                     required
                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four  focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
-                    placeholder="Password"
+                    placeholder="Phone Number"
                   />
                 </div>
                 <div>
-                  <label htmlFor="confirmpassword" className="sr-only">
-                    Confirm Password
+                  <label htmlFor="address" className="sr-only">
+                    Address
                   </label>
-                  <input
-                    onBlur={handleConfirmPasswordBlur}
-                    id="confirmpassword"
-                    name="confirmpassword"
-                    type="password"
+                  <textarea
+                    onBlur={handleAddressBlur}
+                    id="address"
+                    name="Address"
+                    type="text"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four rounded-b-md focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
-                    placeholder="Confirm Password"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four  focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm rounded-b-md"
+                    placeholder="Your full address"
                   />
                 </div>
-                
               </div>
 
               {/* loading spinner */}
-              {/* <span className={loading ? "my-1 w-48 mx-2" : "hidden"}>
+              <span className={loading ? "my-1 w-48 mx-2" : "hidden"}>
                 {loading && <Loading />}
               </span>
-             */}
+
               <div>
                 <button
-                  onClick={handleCreateUser}
+                  onClick={confirmOrder}
                   type="submit"
                   className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains "
                 >
@@ -108,6 +142,7 @@ const handleConfirmPasswordBlur = (event) => {
                 </button>
               </div>
             </form>
+            <ToastContainer />
           </div>
         </div>
       </div>

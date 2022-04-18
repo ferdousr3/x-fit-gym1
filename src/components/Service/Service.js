@@ -5,13 +5,15 @@ const Service = ({ service }) => {
   const { slug, name, price, img, description } = service;
 
   const navigate = useNavigate();
-  // const handleToServiceDetails = (slug) => {
-  //   navigate(`/service/${slug}`);
-  // };
-  const handleToOrder = (slug) => {
-    const path = "/order";
-    navigate(path);
+  const handleToServiceDetails = (slug) => {
+    const dName = service.name;
+    console.log(dName);
+    navigate(`/order/${slug}`);
   };
+  // const handleToOrder = (slug) => {
+  //   const path = "/order";
+  //   navigate(path);
+  // };
 
   return (
     <div className="lg:col-span-2 w-auto pb-4 shadow-4xl hover:shadow-5xl bg-white m-2 rounded ">
@@ -22,18 +24,18 @@ const Service = ({ service }) => {
           Price: <span className="text-mains">${price}</span>
         </h6>
         <p className="text-sm text-four">{description.slice(0, 80)}</p>
-        {/* <button
+        <button
           onClick={() => handleToServiceDetails(slug)}
           className="py-2 px-4 mt-3 bg-main hover:bg-mains text-white rounded-full"
         >
           start now
-        </button> */}
-        <button
+        </button>
+        {/* <button
           onClick={handleToOrder}
           className="py-2 px-4 mt-3 bg-main hover:bg-mains text-white rounded-full"
         >
           start now
-        </button>
+        </button> */}
       </div>
     </div>
   );

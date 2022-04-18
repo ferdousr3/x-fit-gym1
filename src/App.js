@@ -23,10 +23,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/service/:serviceSlug" element={<ServiceDetails />} />
+          {/* <Route path="/service/:serviceSlug" element={<ServiceDetails />} /> */}
           <Route path="/blog" element={<Blog />} />
           <Route
-            path="/order"
+            path="/order/:serviceSlug"
             element={
               <RequireAuth>
                 <Order />
