@@ -9,8 +9,7 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -55,7 +54,7 @@ const Login = () => {
   return (
     <>
       <div className="min-h-full flex items-center justify-center pt-12 pb-40 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-sm w-full space-y-8">
+        <div className="max-w-sm w-full space-y-4">
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-second">
               Sign in to your account
@@ -107,7 +106,7 @@ const Login = () => {
             </div>
 
             {/* loading spinner */}
-            <span className={(loading || sending) ? "my-1 w-48 mx-2" : "hidden"}>
+            <span className={loading || sending ? "my-1 w-48 mx-2" : "hidden"}>
               {(loading || sending) && <Loading />}
             </span>
             {/* error messages */}
@@ -140,7 +139,7 @@ const Login = () => {
                 </Link>
               </p>
             </div>
-
+            {/* forgot password */}
             <div className="text-sm">
               <button
                 onClick={forgotPassword}
@@ -151,6 +150,8 @@ const Login = () => {
             </div>
             <ToastContainer />
           </div>
+          {/* google signup */}
+          <SocialLogin />
         </div>
       </div>
     </>

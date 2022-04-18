@@ -62,7 +62,7 @@ const HeroSection = () => {
                     alt=""
                   />
                   <img
-                    className=" z-50 absolute w-16 h-16 md:w-24 md:h-24 rounded bg-white shadow-4xl top-[70%] left-[-10px] md:left-[-30px] "
+                    className=" z-10 absolute w-16 h-16 md:w-24 md:h-24 rounded bg-white shadow-4xl top-[70%] left-[-10px] md:left-[-30px] "
                     src={dumbel}
                     alt=""
                   />

@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full backdrop-opacity-60  z-10 fixed py-5 shadow bg-six mx-auto ">
+    <header className="w-full  backdrop-opacity-60 z-40 fixed py-5 shadow bg-six mx-auto ">
       <div className="container  mx-auto ">
         <nav className="mx-auto   md:flex  items-center lg:flex lg:justify-between ">
           <div className="flex justify-between  items-center lg:flex-none">

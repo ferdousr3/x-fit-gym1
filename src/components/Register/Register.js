@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaGoogle } from "react-icons/fa";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +16,7 @@ const Register = () => {
   const [customError, setCustomError] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  
 
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ const Register = () => {
   }
   // error handle
   let errorMessages;
-  if (customError || error) {
+  if (customError || error ) {
     errorMessages = (
       <p className="text-sm text-red-900">{customError?.message}</p>
     );
@@ -51,6 +53,9 @@ const Register = () => {
     createUserWithEmailAndPassword(email, password);
     toast("Thank You for Registration");
   };
+
+    
+ 
 
   return (
     <>
@@ -161,17 +166,7 @@ const Register = () => {
           </div>
           <ToastContainer />
           {/* google signup */}
-          <div className="flex items-center justify-center">
-            <span className="h-[1px] md:w-40 w-32 block  bg-gray-300 mr-2"></span>
-            <p>or</p>
-            <span className="h-[1px] md:w-40 w-32 block bg-gray-300 ml-2"></span>
-          </div>
-          <div className="div">
-            <button>
-              <FaGoogle />
-              <p>Login with Google</p>
-            </button>
-          </div>
+          <SocialLogin />
         </div>
       </div>
     </>
