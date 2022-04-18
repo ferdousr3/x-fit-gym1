@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaAlignLeft } from "react-icons/fa";
 import { BsXLg } from "react-icons/bs";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 const Header = () => {
+
+  const navigate = useNavigate()
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
 
@@ -116,9 +118,28 @@ const Header = () => {
               !open ? "top-10" : "flex"
             }`}
           >
-            <button className="hidden  lg:flex md:flex  justify-center lg:justify-end items-center text-right bg-main text-[#ffffff] py-2.5 px-8 rounded-3xl uppercase text-[14px] font-semibold hover:bg-mains transition-all duration-500 ">
+            {/* <button onClick={()=>navigate('/login')}  className="hidden  lg:flex md:flex  justify-center lg:justify-end items-center text-right bg-main text-[#ffffff] py-2.5 px-8 rounded-3xl uppercase text-[14px] font-semibold hover:bg-mains transition-all duration-500 ">
               Login
-            </button>
+            </button> */}
+            {user ? (
+              <button
+                onClick={handleSignOut}
+                className="hidden  lg:flex md:flex  justify-center lg:justify-end items-center text-right bg-main text-[#ffffff] py-2.5 px-8 rounded-3xl uppercase text-[14px] font-semibold hover:bg-mains transition-all duration-500  "
+              >
+                Sign Out
+              </button>
+            ) : (
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "hidden  lg:flex md:flex  justify-center lg:justify-end items-center text-right bg-main text-[#ffffff] py-2.5 px-8 rounded-3xl uppercase text-[14px] font-semibold hover:bg-mains transition-all duration-500"
+                    : " hidden  lg:flex md:flex  justify-center lg:justify-end items-center text-right bg-main text-[#ffffff] py-2.5 px-8 rounded-3xl uppercase text-[14px] font-semibold hover:bg-mains transition-all duration-500 "
+                }
+                to="/login"
+              >
+                Login
+              </NavLink>
+            )}
           </div>
         </nav>
       </div>

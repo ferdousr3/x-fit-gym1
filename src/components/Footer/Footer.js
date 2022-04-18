@@ -11,7 +11,7 @@ const date = new Date()
 const year=date.getFullYear()
 
   return (
-    <footer className=" bg-[#FFF7F5] text-second pt-20 pb-6">
+    <footer className=" bg-six text-second pt-10 pb-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-10 gap-8 ">
           <div className="col-span-3 mt-3">
