@@ -6,14 +6,11 @@ const Service = ({ service }) => {
 
   const navigate = useNavigate();
   const handleToServiceDetails = (slug) => {
-    const dName = service.name;
-    console.log(dName);
+   
+  
     navigate(`/order/${slug}`);
   };
-  // const handleToOrder = (slug) => {
-  //   const path = "/order";
-  //   navigate(path);
-  // };
+  
 
   return (
     <div className="lg:col-span-2 w-auto pb-4 shadow-4xl hover:shadow-5xl bg-white m-2 rounded ">

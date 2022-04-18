@@ -1,5 +1,5 @@
 import React from "react";
-import useServices from "../../hooks/hooks";
+import useServices from "../../hooks/useServices";
 import Button from "../Button/Button";
 import Service from "../Service/Service";
 import SectionSideTitle from "../Title/SectionSideTitle";

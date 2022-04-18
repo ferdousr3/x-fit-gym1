@@ -11,7 +11,9 @@ const Blog = () => {
         />
         <Answers
           ques="Why are you using firebase? What other options do you have to implement authentication"
-          ans="firebase is used for user authentication. If we want to create a won authentication system then it's more costly and has security issues.   firebase solves this problem, firebase is easy to use and more secure. Without Email, Password we can implement social accounts (like Facebook, Linkedin, Twitter, etc ) login, Github, and many more. also, we can use a Microsoft account, Apple ID"
+          ans="firebase is used for user authentication. If we want to create a won authentication system then it's more costly and has security issues. firebase solves this problem, firebase is easy to use and more secure. Without Email, Password we can implement social accounts (like Facebook, Linkedin, Twitter, etc ) login, Github, and many more. also, we can use a Microsoft account, Apple ID .
+          The options of firebase authentication are Auth0, Passport,Okta, JSON Web Token, Amazon Cognito, Keycloak, Microsoft Azure provide some feature like that.
+"
         />
         <Answers
           ques="What other services does firebase provide other than authentication"
